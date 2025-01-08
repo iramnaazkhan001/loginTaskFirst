@@ -15,12 +15,20 @@ function Login() {
     const handleSubmit = async(event) => {
         event.preventDefault();
         
-       const postdata= await axios.post('http://localhost:8000/login', values)
+    //    const postdata= await axios.post('http://localhost:8000/login', values)
        
-       console.log("postdata",postdata)
-       if(postdata.data.Status==="Success"){
-           navigate('/')
-       }
+    //    console.log("postdata",postdata)
+    //    if(postdata.data.Status==="Success"){
+    //        navigate('/')
+    //    }
+    console.log("first")
+    axios.post('http://localhost:8000/login', values)
+    .then(res => {
+        console.log(res.data)
+    })
+    .catch(err => {
+        console.log('Error ',err)
+    })
            
     }
 
